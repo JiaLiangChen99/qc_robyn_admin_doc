@@ -1,0 +1,75 @@
+site_name: QC Robyn Admin
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+
+i18n:
+  default_language: zh
+  languages:
+    zh: 中文
+    en: English
+
+nav:
+  - 中文文档:
+    - 介绍: 
+      - zh/index.md
+      - 快速开始: zh/quickstart.md
+    - 基础组件:
+      - 注册组件: zh/components/register.md
+      - 模型类: zh/components/model.md
+      - 表格字段组件: zh/components/table_field.md
+      - 表单字段组件: zh/components/form_field.md
+      - 过滤字段组件: zh/components/filter_field.md
+      - 搜索字段组件: zh/components/search_field.md
+    - 后台用户管理:
+      - 基础说明: zh/api/model_admin_manager.md
+    - 配置钩子函数:
+      - 编辑数据: zh/hooks/edit_hook.md
+      - 添加数据: zh/hooks/add_hook.md
+      - 删除数据: zh/hooks/delete_hook.md
+      - 批量删除: zh/hooks/batch_delete_hook.md
+      - 数据查询: zh/hooks/query_hook.md
+    - API Reference:
+      - ModelAdmin: en/api/model_admin.md
+      - TableField: en/api/table_field.md
+      - FormField: en/api/form_field.md
+      - FilterField: en/api/filter_field.md
+      - SearchField: en/api/search_field.md
+  - English:
+    - Introduction: 
+      - en/index.md
+      - Quick Start: en/quickstart.md
+    - Components:
+      - Register: en/components/register.md
+      - Model: en/components/model.md
+      - TableField: en/components/table_field.md
+      - FormField: en/components/form_field.md
+      - FilterField: en/components/filter_field.md
+      - SearchField: en/components/search_field.md
+    - Hooks:
+      - Edit: en/hooks/edit_hook.md
+      - Add: en/hooks/add_hook.md
+      - Delete: en/hooks/delete_hook.md
+      - Batch Delete: en/hooks/batch_delete_hook.md
+      - Query: en/hooks/query_hook.md
+    - Admin User Management:
+      - Basic Introduction: en/api/model_admin_manager.md
+    - API Reference:
+      - ModelAdmin: en/api/model_admin.md
+      - TableField: en/api/table_field.md
+      - FormField: en/api/form_field.md
+      - FilterField: en/api/filter_field.md
+      - SearchField: en/api/search_field.md
+
+markdown_extensions:
+  - codehilite
+  - fenced_code
+  - admonition
+  - pymdownx.details
+  - tables
+  - footnotes
