@@ -31,7 +31,6 @@ SelectFilter(
         True: "启用",
         False: "禁用"
     },
-    multiple=False            # 是否支持多选
 )
 ```
 
@@ -158,9 +157,6 @@ filter_fields = [
     - 类型: `Dict[Any, str]`
     - 说明: 定义选择框的选项和对应的值
 
-- `multiple`: 是否支持多选（用于SelectFilter）
-    - 类型: `bool`
-    - 默认值: `False`
 
 - `placeholder`: 占位提示文本
     - 类型: `str`
@@ -179,7 +175,6 @@ filter_fields = [
 
 2. 选择过滤器
     - choices字典的key为实际值，value为显示文本
-    - multiple=True时支持多选功能(to do)
 
 3. 范围过滤器
     - DateRangeFilter提供日期选择器

@@ -5,7 +5,7 @@ ModelAdmin 是用于配置模型在后台的展示和管理方式的核心类。
 ## 基本用法
 
 ```python
-from robyn_admin.core import ModelAdmin, TableField, DisplayType
+from qc_robyn_admin.core import ModelAdmin, TableField, DisplayType
 
 class MarkAdmin(ModelAdmin):
     # 显示名称
@@ -21,25 +21,25 @@ class MarkAdmin(ModelAdmin):
     allow_add = True        # 允许添加
     allow_delete = True     # 允许删除
     allow_export = True     # 允许导出
-    
+    allow_import = True    # 允许导入
+
     # 表格字段配置
     table_fields = [
         TableField(
             name="id", label="ID", display_type=DisplayType.TEXT, editable=False, hidden=True
         ),
         TableField(
-            "mark_name", label="商标名", display_type=DisplayType.TEXT, sortable=True, formatter=lambda x: str(x)
+            "xxx", label="xxx", display_type=DisplayType.TEXT, sortable=True, formatter=lambda x: str(x)
         ),
-        TableField(
-            "registration_number", label="注册号", display_type=DisplayType.TEXT, sortable=True, formatter=lambda x:  str(x) if x else None
-        ),
-        TableField(
-            'status', label='状态', display_type=DisplayType.TEXT, sortable=True, formatter=lambda x: str(x)
-        )
     ]
     # 默认排序
     default_ordering = ["-created_at"]
 
+    import_fields = [
+        "name",
+        "email",
+        "biography"
+    ]
 ...
 # Mark is tortoise-orm model
 admin_site.register_model(Mark, MarkAdmin)
@@ -88,6 +88,11 @@ admin_site.register_model(Mark, MarkAdmin)
     - 默认值: `True`
     - 说明: 是否显示导出按钮
 
+- `allow_import`: 允许导入
+    - 类型: `bool`
+    - 默认值: `True`
+    - 说明: 是否显示导入按钮
+
 ### 字段配置
 
 - `table_fields`: 表格字段
@@ -105,6 +110,10 @@ admin_site.register_model(Mark, MarkAdmin)
 - `filter_fields`: 过滤字段
     - 类型: `List[FilterField]`
     - 说明: 定义过滤器字段, 更多参数阅读: [FilterField](/zh/components/filter_field/)
+
+- `import_fields`: 导入字段
+    - 类型: `List[str]`
+    - 说明: 定义导入时可导入的字段
 
 ## 高级配置
 
@@ -140,7 +149,7 @@ async def serialize_object(self, obj: Model, for_display: bool = True) -> dict:
 ## 使用示例
 
 ```python
-from robyn_admin.core import ModelAdmin, TableField, SearchField, SelectFilter
+from qc_robyn_admin.core import ModelAdmin, TableField, SearchField, SelectFilter
 from your_models import User
 
 class UserAdmin(ModelAdmin):

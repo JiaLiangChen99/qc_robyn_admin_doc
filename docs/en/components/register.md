@@ -6,7 +6,7 @@ AdminSite is the core class of QC Robyn Admin, used to initialize and configure 
 
 ```python
 from robyn import Robyn
-from robyn_admin.core import AdminSite
+from qc_robyn_admin.core import AdminSite
 
 app = Robyn()
 admin_site = AdminSite(
@@ -16,7 +16,7 @@ admin_site = AdminSite(
     copyright="© 2024 Company Name. All rights reserved",
     db_url="postgresql://user:password@localhost:5432/dbname",
     modules={
-        "models": ["model.table", "robyn_admin.models"]
+        "models": ["model.table", "qc_robyn_admin.models"]
     },
     default_language="en_US",
     generate_schemas=True
@@ -35,7 +35,7 @@ admin_site = AdminSite(
 
 - `title`: Admin system title
     - Type: `str`
-    - Default: 'Robyn Admin'
+    - Default: 'QC Robyn Admin'
     - Description: System name displayed at the top of the admin interface
 
 - `prefix`: Route prefix
@@ -45,8 +45,8 @@ admin_site = AdminSite(
 
 - `copyright`: Copyright information
     - Type: `str`
-    - Default: None
-    - Description: Copyright text displayed at the bottom of the login page
+    - Default: 'QC Robyn Admin'
+    - Description: Copyright text displayed at the bottom of the page
 
 - `db_url`: Database connection URL
     - Type: `str`
@@ -87,7 +87,7 @@ Parameters:
 Register a custom menu item.
 
 ```python
-from robyn_admin.core import MenuItem
+from qc_robyn_admin.core import MenuItem
 
 admin_site.register_menu(MenuItem(
     name="System Management",
@@ -103,7 +103,7 @@ Parameters:
 
 ```python
 from robyn import Robyn
-from robyn_admin.core import AdminSite, ModelAdmin, MenuItem
+from qc_robyn_admin.core import AdminSite, ModelAdmin, MenuItem
 from your_models import YourModel
 
 app = Robyn()

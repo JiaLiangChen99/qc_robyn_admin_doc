@@ -5,7 +5,7 @@ ModelAdmin is the core class for configuring how models are displayed and manage
 ## Basic Usage
 
 ```python
-from robyn_admin.core import ModelAdmin, TableField, DisplayType
+from qc_robyn_admin.core import ModelAdmin, TableField, DisplayType
 
 class MarkAdmin(ModelAdmin):
     # 显示名称
@@ -21,26 +21,25 @@ class MarkAdmin(ModelAdmin):
     allow_add = True        # 允许添加
     allow_delete = True     # 允许删除
     allow_export = True     # 允许导出
-    
+    allow_import = True    # 允许导入
+
     # 表格字段配置
     table_fields = [
-        # need to insert pk field to
         TableField(
             name="id", label="ID", display_type=DisplayType.TEXT, editable=False, hidden=True
         ),
         TableField(
-            "mark_name", label="商标名", display_type=DisplayType.TEXT, sortable=True, formatter=lambda x: str(x)
+            "xxx", label="xxx", display_type=DisplayType.TEXT, sortable=True, formatter=lambda x: str(x)
         ),
-        TableField(
-            "registration_number", label="注册号", display_type=DisplayType.TEXT, sortable=True, formatter=lambda x:  str(x) if x else None
-        ),
-        TableField(
-            'status', label='状态', display_type=DisplayType.TEXT, sortable=True, formatter=lambda x: str(x)
-        )
     ]
     # 默认排序
     default_ordering = ["-created_at"]
 
+    import_fields = [
+        "name",
+        "email",
+        "biography"
+    ]
 ...
 # Mark is tortoise-orm model
 admin_site.register_model(Mark, MarkAdmin)
@@ -88,6 +87,11 @@ admin_site.register_model(Mark, MarkAdmin)
     - Default: `True`
     - Description: Whether to show the export button
 
+- `allow_import`: Allow import
+    - Type: `bool`
+    - Default: `True`
+    - Description: Whether to show the import button
+
 ### Field Configuration
 
 - `table_fields`: Table fields
@@ -105,6 +109,10 @@ admin_site.register_model(Mark, MarkAdmin)
 - `filter_fields`: Filter fields
     - Type: `List[FilterField]`
     - Description: Define filter fields, more details reading: [FilterField](/en/components/filter_field/)
+
+- `import_fields`: Import fields
+    - Type: `List[str]`
+    - Description: Define fields that can be imported
 
 ## Advanced Configuration
 
@@ -140,7 +148,7 @@ async def serialize_object(self, obj: Model, for_display: bool = True) -> dict:
 ## Usage Example
 
 ```python
-from robyn_admin.core import ModelAdmin, TableField, SearchField, SelectFilter
+from qc_robyn_admin.core import ModelAdmin, TableField, SearchField, SelectFilter
 from your_models import User
 
 class UserAdmin(ModelAdmin):

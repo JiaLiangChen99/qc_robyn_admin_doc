@@ -31,7 +31,6 @@ SelectFilter(
         True: "Enabled",
         False: "Disabled"
     },
-    multiple=False            # Whether to support multiple selection
 )
 ```
 
@@ -157,10 +156,6 @@ filter_fields = [
 - `choices`: Options configuration (for SelectFilter)
     - Type: `Dict[Any, str]`
     - Description: Defines the options and corresponding values for the select box
-
-- `multiple`: Multiple selection support (for SelectFilter)
-    - Type: `bool`
-    - Default value: `False`
 
 - `placeholder`: Placeholder text
     - Type: `str`

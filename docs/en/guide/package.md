@@ -4,8 +4,8 @@
 
 1. Ensure correct project structure:
 ```
-robyn_admin/
-├── robyn_admin/
+qc_robyn_admin/
+├── qc_robyn_admin/
 │   ├── __init__.py
 │   ├── core/
 │   ├── utils/
@@ -24,14 +24,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="robyn_admin",
+    name="qc_robyn_admin",
     version="0.1.0",
     author="Your Name",
     author_email="your.email@example.com",
     description="A modern admin interface for Robyn framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/robyn_admin",
+    url="https://github.com/yourusername/qc_robyn_admin",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -46,7 +46,7 @@ setup(
     ],
     include_package_data=True,  # Include non-Python files
     package_data={
-        'robyn_admin': [
+        'qc_robyn_admin': [
             'static/*',
             'templates/*',
             'i18n/*'
@@ -67,8 +67,8 @@ pip install build twine
 python -m build
 ```
 This will create two files in the `dist/` directory:
-- `robyn_admin-0.1.0.tar.gz` (source distribution)
-- `robyn_admin-0.1.0-py3-none-any.whl` (built distribution)
+- `qc_robyn_admin-0.1.0.tar.gz` (source distribution)
+- `qc_robyn_admin-0.1.0-py3-none-any.whl` (built distribution)
 
 ## Test Installation
 
@@ -82,7 +82,7 @@ test_env\Scripts\activate  # Windows
 
 2. Test local installation:
 ```bash
-pip install dist/robyn_admin-0.1.0-py3-none-any.whl
+pip install dist/qc_robyn_admin-0.1.0-py3-none-any.whl
 ```
 
 ## Publishing to PyPI

@@ -24,12 +24,24 @@ Configuration is done in the form_fields and add_form_fields of AdminModel
         - `DATETIME`: Date time picker
         - `SELECT`: Dropdown select box
         - `SWITCH`: Switch component
+        - `FILE_UPLOAD`: File upload
     - Description: Determines the input type of the form field
 
 - `required`: Required field
     - Type: `bool`
     - Default value: `False`
     - Description: Whether the field is required
+
+- `upload_path`: File upload path
+    - Type: `str`
+    - Default value: `None`
+    - Description: The path for file upload
+
+
+- `max_size`: File upload max size
+    - Type: `int`
+    - Default value: `None`
+    - Description: The max size for file upload (unit: bytes)
 
 ## Advanced Configuration
 

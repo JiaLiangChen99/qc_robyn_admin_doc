@@ -8,11 +8,18 @@ theme:
     - navigation.expand
     - search.highlight
 
-i18n:
-  default_language: zh
-  languages:
-    zh: 中文
-    en: English
+plugins:
+  - search
+  # - i18n:
+  #     default_language: zh
+  #     languages:
+  #       - locale: zh
+  #         name: 中文
+  #         build: true
+  #         default: true
+  #       - locale: en
+  #         name: English
+  #         build: true
 
 nav:
   - 中文文档:

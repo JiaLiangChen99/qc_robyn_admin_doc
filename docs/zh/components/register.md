@@ -6,7 +6,7 @@ AdminSite 是 QC Robyn Admin 的核心类，用于初始化和配置整个后台
 
 ```python
 from robyn import Robyn
-from robyn_admin.core import AdminSite
+from qc_robyn_admin.core import AdminSite
 
 app = Robyn()
 admin_site = AdminSite(
@@ -16,7 +16,7 @@ admin_site = AdminSite(
     copyright="© 2024 公司名称 版权所有",
     db_url="postgresql://user:password@localhost:5432/dbname",
     modules={
-        "models": ["model.table", "robyn_admin.models"]
+        "models": ["model.table", "qc_robyn_admin.models"]
     },
     default_language="zh_CN",
     generate_schemas=True
@@ -35,7 +35,7 @@ admin_site = AdminSite(
 
 - `title`: 后台系统标题
     - 类型: `str`
-    - 默认值: 'Robyn Admin'
+    - 默认值: 'QC Robyn Admin'
     - 说明: 显示在后台界面顶部的系统名称
 
 - `prefix`: 路由前缀
@@ -45,8 +45,8 @@ admin_site = AdminSite(
 
 - `copyright`: 版权信息
     - 类型: `str`
-    - 默认值: None
-    - 说明: 显示在登陆页面底部的版权信息
+    - 默认值: 'QC Robyn Admin'
+    - 说明: 页面底部的版权信息
 
 - `db_url`: 数据库连接 URL
     - 类型: `str`
@@ -87,7 +87,7 @@ admin_site.register_model(YourModel, YourModelAdmin)
 注册自定义菜单项。
 
 ```python
-from robyn_admin.core import MenuItem
+from qc_robyn_admin.core import MenuItem
 
 admin_site.register_menu(MenuItem(
     name="系统管理",
@@ -103,7 +103,7 @@ admin_site.register_menu(MenuItem(
 
 ```python
 from robyn import Robyn
-from robyn_admin.core import AdminSite, ModelAdmin, MenuItem
+from qc_robyn_admin.core import AdminSite, ModelAdmin, MenuItem
 from your_models import YourModel
 
 app = Robyn()

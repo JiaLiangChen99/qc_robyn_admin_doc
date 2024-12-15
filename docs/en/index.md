@@ -13,3 +13,16 @@ QC Robyn Admin is a powerful admin interface built on top of the Robyn framework
 - 📝 Hooks: Support custom hooks for admin operations
 
 ## Installation 
+
+```
+pip install qc_robyn_admin
+```
+
+## Quick Start
+
+[Quick Start](quickstart.md)
+
+## Next Steps
+
+- Support for complex related model editing and querying
+- Support for special components

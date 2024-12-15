@@ -4,6 +4,21 @@ FormField 是用于配置表单字段的核心组件，支持多种输入类型�
 
 配置在AdminModel的form_fields和add_form_fields中
 
+## 示例
+
+```
+python
+
+add_form_fields = [
+        FormField("name", label="作者名称", required=True),
+        FormField("avatar", label="头像", field_type=DisplayType.FILE_UPLOAD,upload_path="static/avatars", accept="image/*", max_size=1024*1024*10),
+        FormField(
+            'biography', label='简介', field_type=DisplayType.TEXT, 
+            processor=lambda x: get_biography(x)
+        )
+    ]
+```
+
 ## 基本参数
 
 - `name`: 字段名称
@@ -24,12 +39,19 @@ FormField 是用于配置表单字段的核心组件，支持多种输入类型�
         - `DATETIME`: 日期时间选择器
         - `SELECT`: 下拉选择框
         - `SWITCH`: 开关组件
+        - `FILE_UPLOAD`: 文件上传
     - 说明: 决定表单字段的输入类型
 
-- `required`: 是否必填
-    - 类型: `bool`
-    - 默认值: `False`
-    - 说明: 是否为必填字段
+- `upload_path`: 文件上传路径str
+    - 类型: `str`
+    - 默认值: None
+    - 说明: 文件图片上传的路径
+
+- `max_size`: 文件上传最大大小
+    - 类型: `int`
+    - 默认值: None
+    - 说明: 文件图片上传的最大大小(单位字节)
+
 
 ## 高级配置
 

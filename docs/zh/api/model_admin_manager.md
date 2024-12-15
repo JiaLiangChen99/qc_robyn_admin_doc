@@ -1,6 +1,6 @@
 # 权限管理
 
-Robyn Admin 提供了一套完整的RBAC权限管理系统，包括用户管理、角色管理和权限控制。
+QC Robyn Admin 提供了简单的路由管理模块，包括用户管理、角色管理和权限控制。
 
 ## 初始账号
 
@@ -9,6 +9,21 @@ Robyn Admin 提供了一套完整的RBAC权限管理系统，包括用户管理�
 - 密码：admin
 
 建议首次登录后立即修改密码。
+
+tips：
+
+qc_robyn_admin通过配置角色的方式来控制路由权限，需要对角色做好允许路由访问后，才可以进行路由限制，否则用户可以访问所有页面
+
+![角色管理界面](../images/role_manager.png)
+![角色管理设置](../images/role_set_path.png)
+
+添加一个新的用户
+
+![添加角色](../images/add_authormanage_user.png)
+
+设置用户所属角色
+
+![设置用户所属角色](../images/set_user_role.png)
 
 ## 用户管理
 
@@ -19,6 +34,7 @@ Robyn Admin 提供了一套完整的RBAC权限管理系统，包括用户管理�
 - 分配用户角色
 
 ![用户管理界面](../images/user_manager.png)
+
 
 ## 角色管理
 
